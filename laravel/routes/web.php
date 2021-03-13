@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VoteController;
+use App\Http\Controllers\SurveyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [SurveyController::class, 'index'])->name('survey.index');
+Route::get('/stats', [SurveyController::class, 'stats'])->name('survey.stats');
+Route::post('/votes/store', [VoteController::class, 'store'])->name('votes.store');
+
