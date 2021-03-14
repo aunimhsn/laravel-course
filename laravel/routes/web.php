@@ -19,3 +19,8 @@ Route::get('/', [SurveyController::class, 'index'])->name('survey.index');
 Route::get('/stats', [SurveyController::class, 'stats'])->name('survey.stats');
 Route::post('/votes/store', [VoteController::class, 'store'])->name('votes.store');
 
+Route::get('/welcome', function() {
+    return view('welcome');
+});
+
+

@@ -7,7 +7,6 @@ class SurveyController extends Controller
 
     public function index() 
     {
-        $this->results();
         return view('survey.index');
     }
 
